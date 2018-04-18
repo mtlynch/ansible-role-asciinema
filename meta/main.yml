@@ -1,0 +1,15 @@
+---
+galaxy_info:
+  author: Michael Lynch
+  description: Asciinema shell recorder
+  license: MIT
+  min_ansible_version: 2.4
+  platforms:
+  - name: Ubuntu
+    versions:
+      - xenial
+  - name: Debian
+    versions:
+      - jessie
+  galaxy_tags:
+    - asciinema

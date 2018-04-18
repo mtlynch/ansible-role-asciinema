@@ -1,0 +1,27 @@
+---
+- name: install python3-pip
+  apt:
+    name: python3-pip
+    state: present
+
+- name: install asciinema
+  pip:
+    name: asciinema
+    state: present
+    executable: pip3
+
+- name: create asciinema config directory
+  file:
+    path: "{{ asciinema_config_dir }}"
+    state: directory
+    recurse: yes
+    owner: "{{ ansible_user }}"
+    group: "{{ ansible_user }}"
+    mode: 0755
+  when: asciinema_install_id
+
+- name: create install_id file
+  copy:
+    content: "{{ asciinema_install_id }}"
+    dest: "{{ asciinema_config_dir }}/install-id"
+  when: asciinema_install_id

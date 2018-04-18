@@ -1,0 +1,3 @@
+---
+asciinema_config_dir: "{{ ansible_env.HOME }}/.config/asciinema"
+asciinema_install_id: null
