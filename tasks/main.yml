@@ -18,10 +18,10 @@
     owner: "{{ ansible_user }}"
     group: "{{ ansible_user }}"
     mode: 0755
-  when: asciinema_install_id
+  when: asciinema_install_id is defined and asciinema_install_id
 
 - name: create install_id file
   copy:
     content: "{{ asciinema_install_id }}"
     dest: "{{ asciinema_config_dir }}/install-id"
-  when: asciinema_install_id
+  when: asciinema_install_id is defined and asciinema_install_id
